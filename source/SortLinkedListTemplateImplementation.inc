@@ -32,7 +32,7 @@ begin
 				for i := 0 to insize - 1 do
 				begin
 					Inc(psize);
-					q := _PT(q._Next);
+					q := q._Next;
 					if 
 						q = nil
 					then
@@ -54,7 +54,7 @@ begin
 					then
 					begin
 						e := q;
-						q := _PT(q._Next);
+						q := q._Next;
 						Dec(qsize);
 					end
 					else if
@@ -62,7 +62,7 @@ begin
 					then
 					begin
 						e := p;
-						p := _PT(p._Next);
+						p := p._Next;
 						Dec(psize);
 					end
 					else if
@@ -70,13 +70,13 @@ begin
 					then
 					begin
 						e := p;
-						p := _PT(p._Next);
+						p := p._Next;
 						Dec(psize);
 					end
 					else
 					begin
 						e := q;
-						q := _PT(q._Next);
+						q := q._Next;
 						Dec(qsize);
 					end;
 					if 
