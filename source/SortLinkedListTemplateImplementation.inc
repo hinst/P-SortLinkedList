@@ -1,5 +1,5 @@
-//function Compare($PT first, $PT second): integer;
-_CompareFunction
+function _SortFunctionCompare(const aFirst, aSecond: _PT): Integer; inline;
+_CompareFunctionBody
 
 function _SortFunction(list: _PT): _PT;
 var
@@ -32,7 +32,7 @@ begin
 				for i := 0 to insize - 1 do
 				begin
 					Inc(psize);
-					q := q._Next;
+					q := _PT(q._Next);
 					if 
 						q = nil
 					then
@@ -54,7 +54,7 @@ begin
 					then
 					begin
 						e := q;
-						q := q._Next;
+						q := _PT(q._Next);
 						Dec(qsize);
 					end
 					else if
@@ -62,21 +62,21 @@ begin
 					then
 					begin
 						e := p;
-						p := p._Next;
+						p := _PT(p._Next);
 						Dec(psize);
 					end
 					else if
-						Compare(p, q) <= 0
+						_SortFunctionCompare(p, q) <= 0
 					then
 					begin
 						e := p;
-						p := p._Next;
+						p := _PT(p._Next);
 						Dec(psize);
 					end
 					else
 					begin
 						e := q;
-						q := q._Next;
+						q := _PT(q._Next);
 						Dec(qsize);
 					end;
 					if 
@@ -94,9 +94,9 @@ begin
 				nmerges  <= 1
 			then
 			begin
-				result := list
+				result := list;
 				break;
-			end;
+			end
 			else
 				insize := 2 * insize;
 		end;
