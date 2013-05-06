@@ -3,7 +3,7 @@ _CompareFunctionBody
 
 function _SortFunction(list: _PT): _PT;
 var
-	p, q, e, tail, oldhead: _PT;
+	p, q, e, tail: _PT;
 	insize, nmerges, psize, qsize, i: Integer;
 begin
 	if 
@@ -18,7 +18,6 @@ begin
 		do
 		begin
 			p := list;
-			oldhead := list;
 			list := nil;
 			tail := nil;
 			nmerges := 0;
