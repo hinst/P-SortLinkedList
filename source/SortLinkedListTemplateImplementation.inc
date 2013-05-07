@@ -6,11 +6,10 @@ var
 	p, q, e, tail: _PT;
 	insize, nmerges, psize, qsize, i: Integer;
 begin
+	result := nil;
 	if 
-		nil = list
+		list <> nil
 	then
-		result := nil
-	else
 	begin
 		insize := 1;
 		while
